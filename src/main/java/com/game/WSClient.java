@@ -33,7 +33,7 @@ public class WSClient {
         	if(wsurl!=null){
         		
         	}else{
-        		wsurl="realkeyip.in:8085";
+        		wsurl="realkeyip.in:8084";
         	}
              webSocketClient = new StandardWebSocketClient();
              System.out.println(wsurl);
