@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +31,8 @@ import com.game.util.GameUtil;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/game")
 public class GameController {
+	private final static Logger LOG =
+            Logger.getLogger(GameController.class);
 	@Autowired
 	private GameUtil gameUtil;
 	@Autowired
@@ -53,6 +56,7 @@ public class GameController {
 		synchronized (userId) {			
 			
 			gameType="game_"+gameType;
+			LOG.info(gameType);
 			return gameUtil.assignGameId(gameType,amount);			
 		}			
 	}

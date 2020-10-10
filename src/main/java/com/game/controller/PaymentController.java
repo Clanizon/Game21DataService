@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +25,8 @@ import com.game.model.payment.PaymentAudit;
 public class PaymentController {
 	@Autowired
 	private PaymentService paymentService;
+	private final static Logger LOG =
+            Logger.getLogger(PaymentController.class);
 
 	@PostMapping("/createpayment")
 	public Map<String ,Object>  createPayment(@Valid @RequestBody PaymentAudit paymentAudit) {

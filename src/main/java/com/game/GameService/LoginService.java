@@ -54,7 +54,7 @@ public class LoginService {
 	public Object addPlayer(User user) {
 		User newPlayer = new User();
 		if (null != userRepository.findByUserId(user.getUserId())) {
-			return "user Already Exixtss";
+			return "User Already Exists";
 			
 	 } else {
 		

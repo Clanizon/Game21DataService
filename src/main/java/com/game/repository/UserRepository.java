@@ -11,7 +11,7 @@ import com.game.model.user.User;
 
 public interface UserRepository extends CrudRepository<User, Long>{
 	  
-	  Optional<User> findByUserId(String userId);
+	  User findByUserId(String userId);
 	  
 	   User findByUserIdAndUserPassword(String userId,String userPassword);
 	}
